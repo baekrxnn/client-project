@@ -2,14 +2,11 @@
 /* global $ */
 
 let today = new Date();
-let currentYear=(today.prototype.getFullYear()).toString();
-let currentMonth=(today.prototype.getMonth()+1).toString();
-let currentDate=(today.prototype.getDate()).toString();
+let currentYear=(today.getFullYear()).toString();
+let currentMonth=(today.getMonth()+1).toString();
+let currentDate=(today.getDate()).toString();
 
 let date = currentYear + "." + currentMonth + "." +currentDate;
 console.log(date);
 
-let day=(Date()).toString;
-console.log(day);
-
-$("#date").text(day);
+$("#date").text(date);
