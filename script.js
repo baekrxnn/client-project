@@ -1,5 +1,5 @@
 // JavaScript File
-/* global $ */
+/*global $*/
 
 let today = new Date();
 let currentYear=(today.getFullYear()).toString();
