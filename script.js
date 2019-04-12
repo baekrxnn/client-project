@@ -23,6 +23,22 @@ if (currentMin <10) {
 let time = currentHour + ":" + currentMin;
 console.log(time);
 
+//append time to the page
 $("#time").text(time);
 
 //console.log(new Date().toLocaleTimeString()); 
+
+//debugger;
+
+//getting latitude and longitude
+window.navigator.geolocation.getCurrentPosition(function(a) {
+    console.log(a);
+    var crd = a.coords;
+    //console.log(`Latitude : ${crd.latitude}`);
+    //console.log(`Longitude: ${crd.longitude}`);
+    let lat=crd.latitude;
+    let long=crd.longitude;
+    console.log(lat);
+    console.log(long);
+});
+
