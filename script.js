@@ -31,14 +31,48 @@ $("#time").text(time);
 //debugger;
 
 //getting latitude and longitude
+
+let lat;
+let long;
+
 window.navigator.geolocation.getCurrentPosition(function(a) {
     console.log(a);
     var crd = a.coords;
     //console.log(`Latitude : ${crd.latitude}`);
     //console.log(`Longitude: ${crd.longitude}`);
-    let lat=crd.latitude;
-    let long=crd.longitude;
-    console.log(lat);
-    console.log(long);
+    lat=crd.latitude;
+    long=crd.longitude;
+    //console.log(lat);
+    //console.log(long);
+    
+    //API Call
+    let weather=`https://api.weather.gov/points/${lat},${long}`;
+    console.log(weather);
+    $.ajax({ 
+        //crossOrigin: true,
+        url: weather,
+        method: "GET",
+        success: function(response) {
+            //console.log(response.properties.forecastHourly);
+            let first=response.properties.forecastHourly;
+            console.log(first);
+            function hourly() {
+                $.ajax({
+                    url: first,
+                    method: "GET",
+                    success: function(a) {
+                        let temp= a.properties.periods[0].temperature;
+                        console.log(temp);
+                    }
+                    
+                })
+            
+            }
+            
+        }
+        
+    });
+    
 });
 
+//console.log(lat);
