@@ -48,6 +48,7 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
     //API Call
     let weather=`https://api.weather.gov/points/${lat},${long}`;
     console.log(weather);
+    
     $.ajax({ 
         //crossOrigin: true,
         url: weather,
@@ -56,18 +57,22 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
             //console.log(response.properties.forecastHourly);
             let first=response.properties.forecastHourly;
             console.log(first);
-            function hourly() {
+            
+            //gets hourly weather
                 $.ajax({
                     url: first,
                     method: "GET",
                     success: function(a) {
                         let temp= a.properties.periods[0].temperature;
+                        let tempUnit= a.properties.periods[0].temperatureUnit;
                         console.log(temp);
+                        console.log(tempUnit);
+                        $(".weather").text(`current temperature: ${temp} ${tempUnit} `);
                     }
                     
-                })
+                });
             
-            }
+            //
             
         }
         
