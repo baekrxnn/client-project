@@ -50,7 +50,6 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
     console.log(weather);
     
     $.ajax({ 
-        //crossOrigin: true,
         url: weather,
         method: "GET",
         success: function(response) {
@@ -65,9 +64,13 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
                     success: function(a) {
                         let temp= a.properties.periods[0].temperature;
                         let tempUnit= a.properties.periods[0].temperatureUnit;
+                        let sky= a.properties.periods[0].shortForecast;
+                        //let icon= a.properties.periods[0].icon;
                         console.log(temp);
                         console.log(tempUnit);
-                        $(".weather").text(`current temperature: ${temp} ${tempUnit} `);
+                        $(".weather").text(`current weather: ${temp} degrees ${tempUnit}; ${sky}`);
+                        //$(".weather").append(`<img src="${icon}">`);
+                        
                     }
                     
                 });
