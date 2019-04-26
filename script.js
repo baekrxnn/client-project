@@ -13,9 +13,8 @@ console.log(date);
 $("#date").text(date);
 
 // get current time
-setInterval(currentTime, 999);
 
-function currentTime() {
+function getNow() {
     let currentHour=(today.getHours()).toString();
     let currentMin=(today.getMinutes()).toString();
     if (currentMin <10) {
@@ -24,10 +23,16 @@ function currentTime() {
     //console.log(currentMin);
     
     let time = currentHour + ":" + currentMin;
-    console.log(time);
+    return time;
+}
+
+setInterval(currentTime, 999);
+
+function currentTime() {
+    let now = getNow();
     
     //append time to the page
-    $("#time").text(time);
+    $("#time").text(now);
 }
 
 
