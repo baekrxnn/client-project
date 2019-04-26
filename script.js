@@ -13,18 +13,24 @@ console.log(date);
 $("#date").text(date);
 
 // get current time
-let currentHour=(today.getHours()).toString();
-let currentMin=(today.getMinutes()).toString();
-if (currentMin <10) {
-    currentMin="0"+currentMin;
+setInterval(currentTime, 999);
+
+function currentTime() {
+    let currentHour=(today.getHours()).toString();
+    let currentMin=(today.getMinutes()).toString();
+    if (currentMin <10) {
+        currentMin="0"+currentMin;
+    }
+    //console.log(currentMin);
+    
+    let time = currentHour + ":" + currentMin;
+    console.log(time);
+    
+    //append time to the page
+    $("#time").text(time);
 }
-//console.log(currentMin);
 
-let time = currentHour + ":" + currentMin;
-console.log(time);
 
-//append time to the page
-$("#time").text(time);
 
 //console.log(new Date().toLocaleTimeString()); 
 
