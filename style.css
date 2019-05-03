@@ -1,0 +1,19 @@
+.head {
+    text-align: center;
+    font-family: 'Gugi', cursive;
+}
+
+#time {
+    font-size: 100px;
+}
+
+#date {
+    font-size: 40px;
+}
+
+.weather {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Cormorant Unicase', serif;
+    font-weight: bold;
+}

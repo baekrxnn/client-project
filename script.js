@@ -7,6 +7,14 @@ let currentYear=(today.getFullYear()).toString();
 let currentMonth=(today.getMonth()+1).toString();
 let currentDate=(today.getDate()).toString();
 
+if (currentMonth<10) {
+    currentMonth="0"+currentMonth;
+}
+
+if (currentDate<10) {
+    currentDate="0"+currentDate;
+}
+
 let date = currentYear + "." + currentMonth + "." +currentDate;
 console.log(date);
 
@@ -94,4 +102,29 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
     
 });
 
-//console.log(lat);
+
+let colors= [
+    //green&blue
+    "mediumturquoise",
+    "darkturquoise",
+    "cadetblue",
+    "steelblue",
+    "cornflowerblue",
+    "royalblue",
+    "darkblue",
+    "navy",
+    "midnightblue",
+    
+    //red&brown
+    "indianred",
+    "firebrick",
+    "darkred",
+    "maroon",
+    "brown",
+    
+    //gray
+    "darkgray",
+    "gray",
+    "dimgray",
+    "slategray",
+    ];
