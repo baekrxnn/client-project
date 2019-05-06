@@ -1,3 +1,7 @@
+body {
+    background-color: midnightblue;
+}
+
 .head {
     text-align: center;
     font-family: 'Gugi', cursive;
@@ -5,10 +9,12 @@
 
 #time {
     font-size: 100px;
+    color: white;
 }
 
 #date {
     font-size: 40px;
+    color: white;
 }
 
 .weather {

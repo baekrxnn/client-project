@@ -25,10 +25,16 @@ $("#date").text(date);
 function getNow() {
     let currentHour=(today.getHours()).toString();
     let currentMin=(today.getMinutes()).toString();
+    let currentSec=(today.getSeconds());
     if (currentMin <10) {
         currentMin="0"+currentMin;
     }
+    //console.log(currentSec);
     //console.log(currentMin);
+    
+    if (currentSec === 59 || currentSec === 0) {
+        window.location.reload();
+    }
     
     let time = currentHour + ":" + currentMin;
     return time;
@@ -128,3 +134,13 @@ let colors= [
     "dimgray",
     "slategray",
     ];
+
+function col() {
+    colors.forEach(function(co) {
+        co = Math.floor(Math.random() * colors.length);
+        console.log(co);
+        $("body").css("background-color",colors[co]);
+    });
+}
+
+setInterval(col, 60000);
