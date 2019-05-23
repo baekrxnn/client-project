@@ -131,7 +131,12 @@ $.ajax({
         let hkd=b.rates.HKD;
         let rmb=b.rates.CNY;
         
-        
+        $("#up").append(`Exchange rates updated as of ${updated}. Base currency: $1 USD`);
+        $(".money").append(`${euro} Euros`+ "<br>");
+        $(".money").append(`${yen} Japanese Yen`+ "<br>");
+        $(".money").append(`${pound} British Pound`+ "<br>");
+        $(".money").append(`${hkd} Hong Kong Dollar`+ "<br>");
+        $(".money").append(`${rmb} Chinese Yuan`+ "<br>");
     }
     
 })

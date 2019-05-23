@@ -23,3 +23,8 @@ body {
     font-family: 'Cormorant Unicase', serif;
     font-weight: bold;
 }
+
+.style {
+    text-align: center;
+    font-size: 18px;
+}
