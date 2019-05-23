@@ -98,7 +98,7 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
                         //let icon= a.properties.periods[0].icon;
                         console.log(temp);
                         console.log(tempUnit);
-                        $(".weather").text(`current weather: ${temp} degrees ${tempUnit}; ${sky}`);
+                        $(".weather").append(`current weather: ${temp}`+ "<sup>o </sup>"+ `${tempUnit}; ${sky}`);
                         //$(".weather").append(`<img src="${icon}">`);
                         
                     }
