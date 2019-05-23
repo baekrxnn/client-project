@@ -61,10 +61,10 @@ currentTime();
 //debugger;
 
 //getting latitude and longitude
-
 let lat;
 let long;
 
+// weather using geolocation
 window.navigator.geolocation.getCurrentPosition(function(a) {
     console.log(a);
     var crd = a.coords;
@@ -113,6 +113,28 @@ window.navigator.geolocation.getCurrentPosition(function(a) {
     
 });
 
+// currency exchange API
+let base="https://api.exchangeratesapi.io/latest?base=USD";
+$.ajax({
+    url: base,
+    method: "GET",
+    success: function(b) {
+        let updated= b.date;
+        
+        //most used currencies for trade
+        let euro=b.rates.EUR;
+        let yen= b.rates.JPY;
+        let pound= b.rates.GBP;
+        let swiss= b.rates.CHF;
+        let can= b.rates.CAD;
+        let aust=b.rates.AUD;
+        let hkd=b.rates.HKD;
+        let rmb=b.rates.CNY;
+        
+        
+    }
+    
+})
 
 let colors= [
     //green&blue
