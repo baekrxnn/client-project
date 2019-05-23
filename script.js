@@ -2,6 +2,7 @@
 /*global $*/
 
 let today = new Date();
+console.log(today);
 // get current date
 let currentYear=(today.getFullYear()).toString();
 let currentMonth=(today.getMonth()+1).toString();
@@ -29,12 +30,15 @@ function getNow() {
     if (currentMin <10) {
         currentMin="0"+currentMin;
     }
+    if (currentHour<10) {
+        currentHour="0"+currentHour;
+    }
     //console.log(currentSec);
     //console.log(currentMin);
     
-    if (currentSec === 59 || currentSec === 0) {
+    /* if (currentSec === 59 || currentSec === 0) {
         window.location.reload();
-    }
+    } */
     
     let time = currentHour + ":" + currentMin;
     return time;
@@ -43,13 +47,14 @@ function getNow() {
 setInterval(currentTime, 999);
 
 function currentTime() {
-    let now = getNow();
-    
+    //let now = today.toLocaleTimeString();
+    let now=getNow();
+    //window.location.reload();
     //append time to the page
     $("#time").text(now);
 }
 
-
+currentTime();
 
 //console.log(new Date().toLocaleTimeString()); 
 
