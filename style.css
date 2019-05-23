@@ -13,7 +13,7 @@ body {
 }
 
 #date {
-    font-size: 40px;
+    font-size: 50px;
     color: white;
 }
 
@@ -22,9 +22,11 @@ body {
     font-size: 24px;
     font-family: 'Cormorant Unicase', serif;
     font-weight: bold;
+    color: #cecece;
 }
 
 .style {
     text-align: center;
     font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
 }
