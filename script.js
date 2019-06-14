@@ -139,7 +139,7 @@ $.ajax({
         $(".money").append(`${rmb} Chinese Yuan`+ "<br>");
     }
     
-})
+});
 
 let colors= [
     //green&blue

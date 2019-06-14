@@ -19,10 +19,11 @@ body {
 
 .weather {
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     font-family: 'Cormorant Unicase', serif;
     font-weight: bold;
     color: #cecece;
+    padding-bottom: 20px;
 }
 
 .style {
